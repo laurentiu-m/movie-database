@@ -17,7 +17,7 @@ const links = [
 
 export const NavbarLogo = () => {
   return (
-    <div className="flex items-center gap-1 cursor-pointer">
+    <div className="flex items-center gap-2 cursor-pointer">
       <img
         src={logo}
         alt="logo"
@@ -48,7 +48,7 @@ export const NavbarMobileLinks = ({ isOpen, setIsOpen }) => {
     <div
       className={`${
         isOpen ? "w-[75%] mobile-l:w-[65%] tablet:w-[45%]" : "w-[0%]"
-      } bg-surface absolute right-0 top-[0] h-dvh overflow-hidden transition-[width] ease-in-out`}
+      } bg-surface absolute z-10 right-0 top-[0] h-dvh overflow-hidden transition-[width] ease-in-out`}
     >
       <div className="px-6 py-7 w-full flex justify-end tablet:px-12">
         <img
