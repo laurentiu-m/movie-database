@@ -21,9 +21,9 @@ export const NavbarLogo = () => {
       <img
         src={logo}
         alt="logo"
-        className="w-9 h-9 mobile-l:w-11 mobile-l:h-11 laptop-l:w-12 laptop-l:h-12"
+        className="w-9 h-9 mobile-l:w-10 mobile-l:h-10"
       />
-      <h1 className="text-lg font-semibold mt-[5px] mobile-l:text-xl laptop-l:text-2xl">
+      <h1 className="text-lg font-semibold mt-[5px] mobile-l:text-xl">
         MovieDB
       </h1>
     </div>
@@ -94,7 +94,7 @@ export const NavbarDesktopLinks = () => {
 export const DesktopLinks = ({ text }) => {
   return (
     <div>
-      <p className="text-lg font-semibold uppercase cursor-pointer hover:text-primary transition-[color] laptop-l:text-xl">
+      <p className="text-lg font-semibold uppercase cursor-pointer hover:text-primary transition-[color]">
         {text}
       </p>
     </div>
