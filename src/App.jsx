@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 import Footer from "./components/Footer";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
       <Navbar />
 
       <main className="flex-grow px-6 tablet:px-12 laptop:px-16 laptop-l:px-24">
-        <h1>MovieDb</h1>
+        <Home />
       </main>
 
       <Footer />
