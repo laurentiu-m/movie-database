@@ -24,6 +24,8 @@ export default {
       tablet: "768px",
       laptop: "1024px",
       "laptop-l": "1440px",
+      desktop: "1600px",
+      "desktop-l": "2000px",
     },
     extend: {},
   },

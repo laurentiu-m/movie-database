@@ -1,0 +1,14 @@
+.mobile-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.mobile-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #3a3a46;
+  border-radius: 6px;
+}
+
+@media (min-width: 1024px) {
+  .mobile-scrollbar::-webkit-scrollbar {
+    height: 10px;
+  }
+}
