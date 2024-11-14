@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import Watchlist from "./pages/Watchlist";
+import Login from "./pages/Login";
 import Footer from "./components/Footer";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </main>
 
