@@ -1,4 +1,4 @@
-import MovieBox from "../components/MovieBox";
+import MovieCardHome from "../components/MovieCardHome";
 import "../App.css";
 
 const Home = () => {
@@ -30,18 +30,14 @@ const Home = () => {
         </h1>
 
         <div className="flex overflow-y-auto gap-4 pb-2 mobile-scrollbar laptop:pb-3">
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
         </div>
       </div>
 
@@ -51,10 +47,10 @@ const Home = () => {
         </h1>
 
         <div className="flex overflow-y-auto gap-4 pb-2 mobile-scrollbar laptop:pb-3">
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
-          <MovieBox />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
+          <MovieCardHome />
         </div>
       </div>
 

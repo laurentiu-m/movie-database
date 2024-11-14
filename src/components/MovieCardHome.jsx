@@ -1,4 +1,4 @@
-const MovieBox = () => {
+const MovieCardHome = () => {
   return (
     <div className="flex-none w-[170px] h-[310px] rounded-md p-2 bg-surface mobile-l:w-[220px] mobile-l:h-[380px] mobile-l:p-3 tablet:w-[250px] tablet:h-[420px]">
       <div className="w-full h-full flex flex-col justify-between gap-2">
@@ -18,4 +18,4 @@ const MovieBox = () => {
   );
 };
 
-export default MovieBox;
+export default MovieCardHome;

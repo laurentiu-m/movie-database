@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import logo from "../assets/icons/logo.svg";
 import menuHamburger from "../assets/icons/menu.svg";
@@ -9,10 +10,10 @@ import movieIcon from "../assets/icons/movies.svg";
 import loginIcon from "../assets/icons/login.svg";
 
 const links = [
-  { text: "Home", icon: homeIcon },
-  { text: "Movies", icon: movieIcon },
-  { text: "Watchlist", icon: listIcon },
-  { text: "Login", icon: loginIcon },
+  { text: "Home", icon: homeIcon, link: "/" },
+  { text: "Movies", icon: movieIcon, link: "/movies" },
+  { text: "Watchlist", icon: listIcon, link: "/watchlist" },
+  { text: "Login", icon: loginIcon, link: "/login" },
 ];
 
 export const NavbarLogo = () => {
@@ -61,17 +62,28 @@ export const NavbarMobileLinks = ({ isOpen, setIsOpen }) => {
 
       <div className="px-6 pt-14 w-full flex flex-col items-end gap-5 tablet:px-12">
         {links.map((link) => (
-          <MobileLinks key={link.text} text={link.text} icon={link.icon} />
+          <MobileLinks
+            key={link.text}
+            text={link.text}
+            icon={link.icon}
+            link={link.link}
+          />
         ))}
       </div>
     </div>
   );
 };
 
-export const MobileLinks = ({ text, icon }) => {
+export const MobileLinks = ({ text, icon, link }) => {
   return (
     <div className="flex items-center justify-end gap-5 cursor-pointer w-full p-2 rounded-md active:bg-background transition-[background] duration-200 ease-in-out">
-      <p className="text-lg font-semibold uppercase mobile-m:text-xl">{text}</p>
+      <Link
+        className="text-lg font-semibold uppercase mobile-m:text-xl"
+        to={link}
+      >
+        {text}
+      </Link>
+
       <img
         src={icon}
         alt={`${text}-icon`}
@@ -85,18 +97,21 @@ export const NavbarDesktopLinks = () => {
   return (
     <div className="hidden laptop:flex justify-center items-center gap-10 laptop-l:gap-16">
       {links.map((link) => (
-        <DesktopLinks key={link.text} text={link.text} />
+        <DesktopLinks key={link.text} text={link.text} link={link.link} />
       ))}
     </div>
   );
 };
 
-export const DesktopLinks = ({ text }) => {
+export const DesktopLinks = ({ text, link }) => {
   return (
     <div>
-      <p className="text-lg font-semibold uppercase cursor-pointer hover:text-primary transition-[color]">
+      <Link
+        className="text-lg font-semibold uppercase cursor-pointer hover:text-primary transition-[color]"
+        to={link}
+      >
         {text}
-      </p>
+      </Link>
     </div>
   );
 };
@@ -113,8 +128,10 @@ NavbarMobileLinks.propTypes = {
 MobileLinks.propTypes = {
   text: PropTypes.string,
   icon: PropTypes.string,
+  link: PropTypes.string,
 };
 
 DesktopLinks.propTypes = {
   text: PropTypes.string,
+  link: PropTypes.string,
 };
