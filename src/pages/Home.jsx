@@ -1,7 +1,28 @@
 import MovieCardHome from "../components/MovieCardHome";
+import { fetchPopularMovies } from "../api/tmdb";
 import "../App.css";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const getPopularMovies = async () => {
+      try {
+        const data = await fetchPopularMovies();
+        setPopularMovies(data.results);
+      } catch (err) {
+        console.error(err);
+        setError(err);
+      }
+    };
+
+    getPopularMovies();
+  }, []);
+
+  console.log(popularMovies);
+
   return (
     <div className="flex flex-col gap-10 py-12">
       <div className="flex flex-col gap-8 items-center text-center mobile-l:max-w-[550px] mobile-l:m-auto laptop:max-w-[740px]">
@@ -30,14 +51,15 @@ const Home = () => {
         </h1>
 
         <div className="flex overflow-y-auto gap-4 pb-2 mobile-scrollbar laptop:pb-3">
-          <MovieCardHome />
-          <MovieCardHome />
-          <MovieCardHome />
-          <MovieCardHome />
-          <MovieCardHome />
-          <MovieCardHome />
-          <MovieCardHome />
-          <MovieCardHome />
+          {popularMovies.map((movie) => (
+            <MovieCardHome
+              key={movie.id}
+              title={movie.original_title}
+              poster={movie.poster_path}
+              genres={movie.genre_ids}
+              date={movie.release_date}
+            />
+          ))}
         </div>
       </div>
 
